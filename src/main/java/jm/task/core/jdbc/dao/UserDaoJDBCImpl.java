@@ -11,9 +11,9 @@ import java.util.List;
 
 public class UserDaoJDBCImpl implements UserDao {
 
-    String query;
+    private static String query;
 
-    PreparedStatement preparedStatement;
+    private static PreparedStatement preparedStatement;
 
     User user = new User();
 
