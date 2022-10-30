@@ -34,11 +34,8 @@ public class Util {
         } catch (ClassNotFoundException | SQLException e) {
             System.out.println("Connection failed!");
             e.printStackTrace();
-        } finally {
-            //connection.close();
         }
 
-        //connection.close();
         return connection;
     }
 
