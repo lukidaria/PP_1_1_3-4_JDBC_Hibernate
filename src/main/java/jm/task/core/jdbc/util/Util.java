@@ -17,17 +17,16 @@ public class Util {
     private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
 
 
-    public Util(){
-
-
+    public Util() {
     }
 
-    private static Connection connection=null;
+    private static Connection connection = null;
 
     public static Connection getConnection() throws SQLException {
 
-        try  {
+        try {
             connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+            connection.setAutoCommit(false);
             Class.forName(DRIVER);
             System.out.println("Connection successful!");
             //connection.close();
@@ -38,11 +37,6 @@ public class Util {
 
         return connection;
     }
-
-
-
-
-
 
 
 }
