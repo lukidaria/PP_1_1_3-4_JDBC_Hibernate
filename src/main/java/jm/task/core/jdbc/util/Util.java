@@ -26,13 +26,15 @@ public class Util {
 
         try {
             connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
-            connection.setAutoCommit(false);
+            connection.setAutoCommit(false); //выключаем автокоммит
             Class.forName(DRIVER);
             System.out.println("Connection successful!");
             //connection.close();
         } catch (ClassNotFoundException | SQLException e) {
             System.out.println("Connection failed!");
             e.printStackTrace();
+        } finally {
+            connection.setAutoCommit(true); //включаем автокоммит
         }
 
         return connection;
